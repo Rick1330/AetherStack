@@ -1,0 +1,75 @@
+# GitHub Actions Workflow: Linting
+
+name: Lint Codebase
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # TODO: Add setup for each language (Go, Python, Node.js)
+      # and then run respective linters.
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Lint Go code
+        run: |
+          echo "Linting Go code... (placeholder)"
+          # cd cli
+          # golangci-lint run ./...
+          # Add actual Go linting command here
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Lint Python code
+        run: |
+          echo "Linting Python code... (placeholder)"
+          # cd backend
+          # pip install flake8 black isort
+          # flake8 src tests
+          # black --check src tests
+          # isort --check-only src tests
+          # Add actual Python linting commands here
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Lint TypeScript code (VS Code Extension)
+        run: |
+          echo "Linting VS Code Extension TypeScript code... (placeholder)"
+          # cd vscode-extension
+          # npm install
+          # npm run lint
+          # Add actual TypeScript linting command here
+
+      - name: Lint TypeScript code (Dashboard)
+        run: |
+          echo "Linting Dashboard TypeScript code... (placeholder)"
+          # cd dashboard
+          # npm install
+          # npm run lint
+          # Add actual TypeScript linting command here
+
+      - name: Linting Summary
+        run: echo "All linting placeholders complete. Replace with actual lint commands."
+

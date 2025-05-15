@@ -1,0 +1,73 @@
+# GitHub Actions Workflow: Basic Tests
+
+name: Run Basic Tests
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Test CLI (Go)
+        run: |
+          echo "Testing Go CLI... (placeholder)"
+          # cd cli
+          # go test ./...
+          # Add actual Go test command here. For now, check if it can build.
+          # go build -v ./...
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Test Backend (Python)
+        run: |
+          echo "Testing Python Backend... (placeholder)"
+          # cd backend
+          # pip install -r requirements.txt
+          # pip install pytest
+          # pytest tests/
+          # Add actual Python test command here. For now, check healthcheck availability if server was running.
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Test VS Code Extension (TypeScript)
+        run: |
+          echo "Testing VS Code Extension TypeScript... (placeholder)"
+          # cd vscode-extension
+          # npm install
+          # npm run test # Assuming 'test' script is configured in package.json
+          # Add actual TypeScript test command here
+
+      - name: Test Dashboard (TypeScript/Next.js)
+        run: |
+          echo "Testing Dashboard TypeScript/Next.js... (placeholder)"
+          # cd dashboard
+          # npm install
+          # npm run build # Next.js build can catch some errors
+          # npm run test # If tests are configured
+          # Add actual TypeScript/Next.js test command here
+
+      - name: Testing Summary
+        run: echo "All testing placeholders complete. Replace with actual test commands."
+

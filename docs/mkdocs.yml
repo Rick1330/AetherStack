@@ -1,0 +1,61 @@
+site_name: AetherStack Documentation
+site_url: https://your-org.github.io/aetherstack/ # Replace with your actual site URL
+repo_url: https://github.com/your-org/aetherstack # Replace with your repo URL
+repo_name: your-org/aetherstack # Replace with your repo name
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.code.copy
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: 'index.md'
+  - Architecture: 'architecture.md'
+  - Features: 'features.md'
+  - Development Guide: 'development_guide.md'
+  - AI Agents: 'ai_agents.md'
+  - Testing Strategy: 'testing_strategy.md'
+  - Deployment: 'deployment.md'
+  - Roadmap: 'roadmap.md'
+

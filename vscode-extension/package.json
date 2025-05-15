@@ -1,0 +1,47 @@
+{
+  "name": "aetherstack-vscode",
+  "displayName": "AetherStack",
+  "description": "VS Code extension for AetherStack - AI-Augmented Repository Management System.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name", // TODO: Replace with your publisher name
+  "engines": {
+    "vscode": "^1.80.0" // Specify your target VS Code version
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:aetherstack.helloWorld"
+  ],
+  "main": "./out/extension.js", // Entry point of your extension
+  "contributes": {
+    "commands": [
+      {
+        "command": "aetherstack.helloWorld",
+        "title": "AetherStack: Hello World"
+      }
+    ]
+    // TODO: Add other contributions like views, settings, etc.
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test" // Placeholder, configure actual test runner
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.4.0",
+    "typescript": "^5.4.5",
+    "vscode-test": "^1.6.1"
+  }
+}
+
