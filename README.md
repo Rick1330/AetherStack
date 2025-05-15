@@ -15,12 +15,12 @@ AetherStack is a powerful, multi-interface developer toolkit designed to streaml
 ## Architecture Diagram
 
 ```mermaid
-graph TD
-    UserCLI[User via CLI] --> CLI_Tool[CLI Tool (Go + Cobra)];
-    UserVSCode[User via VS Code Extension] --> VSCodeExt[VS Code Extension (TypeScript)];
-    UserWeb[User via Web Dashboard] --> WebDash[Web Dashboard (Next.js + TailwindCSS)];
+   graph TD
+    UserCLI[User via CLI] --> CLI_Tool["CLI Tool (Go + Cobra)"];
+    UserVSCode[User via VS Code Extension] --> VSCodeExt["VS Code Extension (TypeScript)"];
+    UserWeb[User via Web Dashboard] --> WebDash["Web Dashboard (Next.js + TailwindCSS)"];
 
-    CLI_Tool --> BackendAPI[Backend API Server (Python + FastAPI)];
+    CLI_Tool --> BackendAPI["Backend API Server (Python + FastAPI)"];
     VSCodeExt --> BackendAPI;
     WebDash --> BackendAPI;
 
@@ -38,9 +38,9 @@ graph TD
     AI_Orchestrator -- Future --> HuggingFace;
 
     BackendAPI --> GitHubAPI[GitHub API];
-    BackendAPI --> Database[Database (SQLite/PostgreSQL)];
+    BackendAPI --> Database["Database (SQLite/PostgreSQL)"];
 
-    CLI_Tool -- Interacts with --> LocalFileSystem[Local File System/Repositories];
+    CLI_Tool -- Interacts with --> LocalFileSystem["Local File System/Repositories"];
     VSCodeExt -- Interacts with --> LocalFileSystem;
 
     subgraph AetherStack System
